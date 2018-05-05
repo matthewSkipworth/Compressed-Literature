@@ -38,7 +38,7 @@ public class CodingTree {
  * from.
  */
 	void getPriorities(StringBuilder message) {
-		ArrayList<TreeNode> nodes = new ArrayList<TreeNode>(); //ArrayList nodes init.
+		ArrayList<TreeNode> nodes = new ArrayList<TreeNode>(); 
 		ArrayList<TreeNode> temp = new ArrayList<TreeNode>();
 		for (int i = 0; i < message.length(); i++) {
 			if (temp.size() > 2) {
@@ -71,7 +71,8 @@ public class CodingTree {
 		while (theQ.size() > 1) {
 			TreeNode left = theQ.poll();
 			TreeNode right = theQ.poll();
-			TreeNode newNode = new TreeNode((left.frequency + right.frequency), left, right);
+			TreeNode newNode = new TreeNode((left.frequency + right.frequency), 
+											 left, right);
 			theQ.offer(newNode);
 		}
 		HuffmanRoot = theQ.poll();
@@ -113,7 +114,8 @@ public class CodingTree {
 	    while (it.hasNext()) {
 	        Map.Entry pair = (Map.Entry)it.next();
 	        try {
-				outputCodes.write(pair.getKey() + " = " + pair.getValue() + "\n");
+				outputCodes.write(pair.getKey() + " = " + pair.getValue() + 
+								  "\n");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

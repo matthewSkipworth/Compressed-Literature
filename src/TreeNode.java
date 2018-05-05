@@ -20,7 +20,8 @@ public class TreeNode implements Comparable<TreeNode> {
  * @param initialLeft represents the nodes left child.
  * @param initialRight represents the nodes right child.
  */
-	public TreeNode(char theChar, TreeNode initialLeft, TreeNode initialRight) {
+	public TreeNode(char theChar, TreeNode initialLeft, 
+					TreeNode initialRight) {
 		data = theChar;
 		frequency = 1;
 		left = initialLeft;
@@ -35,7 +36,8 @@ public class TreeNode implements Comparable<TreeNode> {
  * @param initialRight represents the node's right child.
  */
 	//constructor used for new tree sums.
-	public TreeNode(int newFrequency, TreeNode initialLeft, TreeNode initialRight) {
+	public TreeNode(int newFrequency, TreeNode initialLeft, 
+					TreeNode initialRight) {
 		frequency = newFrequency;
 		left = initialLeft;
 		right = initialRight;
