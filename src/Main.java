@@ -3,12 +3,21 @@
 import java.io.*;
 import java.nio.charset.Charset;
 import java.util.*;
-
+/**
+ * The class Main drives the Compressed-Literature program.
+ * @author Matthew Skipworth
+ * @version 4 May, 2018
+ */
 
 public class Main {
-
+/**
+ * The main method drives the program. Each program requires a main method.
+ * @param args represents an array of String arguments which may be passed
+ * into the terminal. This feature is not used in this program.
+ * @throws IOException if no file is found.
+ */
 	public static void main(String[] args) throws IOException {
-		
+		long startTime = System.nanoTime();
 		BufferedReader input = null;
 		//DataOutputStream output = null;
 		DataOutputStream output = null;
@@ -64,11 +73,23 @@ public class Main {
 			char tempChar = (char) tempSum;
 			output.write(tempChar);
 		}
+		long endTime   = System.nanoTime();	
+		long totalTime = endTime - startTime;
+	System.out.println("The file to be compressed is " + inFile.length()/1000 + "KB.");
+	System.out.println("The compressed file is " + outFile.length()/1000 + "KB.");
+	double compRatio = (100.0 *outFile.length()/inFile.length());
+	System.out.printf("The input file was compressed to %.4f", compRatio);
+	System.out.println("% of its original size.");
+	System.out.printf("The running time of this program is %.4f",  (1.0*totalTime / 1000000000));
+	System.out.println("seconds.");
 	input.close();
 	outputCodes.close();
 	output.close();
 	}
-
+/**
+ * testCodingTree tests the CodingTree class' methods.
+ * @param newSB represents a message to be encoded.
+ */
 	void testCodingTree(StringBuilder newSB) {
 		newSB = new StringBuilder("Hello. I am Sam.");
 		CodingTree nTree = new CodingTree(newSB);
